@@ -26,7 +26,7 @@ dir=$1
 mkdir -p "${dir}"
 
 if [ ! -d "${dir}"/../../TEMPLATE ]; then
-    log "Error: ${dir}/../../TEMPLATE should exist. You may specify wrong directory."
+    log "Error: ${dir}/../../TEMPLATE should exist. You may be specifying wrong directory."
     exit 1
 fi
 
