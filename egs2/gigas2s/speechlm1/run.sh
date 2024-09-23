@@ -9,8 +9,11 @@ train_conf=conf/train.conf
 
 ./speechlm.sh \
     --stage 1 \
-    --stop_stage 1 \
+    --stop_stage 2 \
     --task "ssl_codec_s2st" \
     --data_name gigas2s \
+    --train_set "train" \
+    --valid_set "dev" \
+    --test_sets "test" \
     --train_config ${train_conf}
 

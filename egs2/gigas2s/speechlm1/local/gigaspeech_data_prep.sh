@@ -13,16 +13,9 @@ SECONDS=0
 data_dir="data"
 train_subset="XS"  # TODO: Change to XL
 
-. ./db.sh || exit 1;
-
-if [ ! -e "${GIGASPEECH}" ]; then
-    log "Fill the value of 'GIGASPEECH' of db.sh"
-    exit 1
-fi
-
-if [ -d ${data_dir}/train ] || [ -d ${data_dir}/dev ] || [ -d ${data_dir}/test ]; then
-    log "Data directory already exists. Please remove it if you want to re-run the script."
-    exit 1
+if [ -d "${data_dir}/train" ] || [ -d "${data_dir}/dev" ] || [ -d "${data_dir}/test" ]; then
+    log "Skipping the processing since the data directory already exists. Please remove it if you want to re-run the script."
+    return 0
 fi
 
 abs_data_dir=$(realpath ${data_dir})

@@ -33,7 +33,7 @@ if [ ${stage} -le 1 ] && [ ${stop_stage} -ge 1 ]; then
     log "GigaSpeech data preparation"
 
     if [ -d "${GIGASPEECH}/audio" ] && [ -f "${GIGASPEECH}/GigaSpeech.json" ]; then
-        bash local/gigaspeech_data_prep.sh
+        . local/gigaspeech_data_prep.sh
     else
         log "Valid GigaSpeech data not found in ${GIGASPEECH}."
         log "Please follow the instruction at https://github.com/SpeechColab/GigaSpeech to download the data."
